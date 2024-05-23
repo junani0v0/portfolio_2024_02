@@ -24,10 +24,10 @@
 
 	<!-- Annotation 기반의 Component Scan 필터(service package 만 검색) -->
 	<context:component-scan base-package="com.portfolio.www">
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
-		<context:include-filter type="regex"
-			expression="\.*\.dao\.*" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="regex" expression="\.*\.dao\.*" />
 	</context:component-scan>
 	
 	  <!-- DAO 구현체 역할을 대신 해주는 클래스 기본설정 4가지가 필요하다. -->
@@ -50,7 +50,7 @@
  	<!-- DAO 위치를 basePackage로.. -->
 	<!-- 작업지시서가 있는 패키지 위치를 잡아줘야 사용 할 수 있다 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.portfolio.www.auth.dao.mybatis" />
+		<property name="basePackage" value="com.portfolio.www.auth.mybatis" />
 	</bean>
 
 	<!-- 트랜잭션 관리를 위한 bean -->

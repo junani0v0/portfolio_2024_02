@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <form action="pf/auth/joinPage.do">
+                    <form action="/pf/auth/join.do" method = "post">
                         <div class="cardify signup_form">
                             <div class="login--header">
                                 <h3>Create Your Account</h3>
@@ -21,23 +21,23 @@
                             <div class="login--form">
 
  								<div class="form-group">
-                                    <label for="user_name">Username</label>
-                                    <input id="user_name" type="text" class="text_field" placeholder="Enter your username...">
+                                    <label for="user_id">UserID</label>
+                                    <input id="user_id" name="memberId" type="text" class="text_field" placeholder="Enter your username...">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="urname">Your Name</label>
-                                    <input id="urname" type="text" class="text_field" placeholder="Enter your Name">
+                                    <input id="urname" name="memberNm" type="text" class="text_field" placeholder="Enter your Name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email_ad">Email Address</label>
-                                    <input id="email_ad" type="text" class="text_field" placeholder="Enter your email address">
+                                    <input id="email_ad" name="email" type="text" class="text_field" placeholder="Enter your email address">
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input id="password" type="text" class="text_field" placeholder="Enter your password...">
+                                    <input id="password" name="passwd" type="text" class="text_field" placeholder="Enter your password...">
                                 </div>
 
                                 <div class="form-group">

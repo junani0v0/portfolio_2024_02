@@ -8,23 +8,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <form action="#">
+                    <form action="/pf/auth/login.do" method = "post">
                         <div class="cardify login">
                             <div class="login--header">
                                 <h3>Welcome Back</h3>
-                                <p>You can sign in with your username</p>
+                                <p>You can sign in with your userid</p>
                             </div>
                             <!-- end .login_header -->
 
                             <div class="login--form">
                                 <div class="form-group">
-                                    <label for="user_name">Username</label>
-                                    <input id="user_name" type="text" class="text_field" placeholder="Enter your username...">
+                                    <label for="user_name">Id</label>
+                                    <input id="user_name" name="memberId" type="text" class="text_field" placeholder="Enter your userId...">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="pass">Password</label>
-                                    <input id="pass" type="text" class="text_field" placeholder="Enter your password...">
+                                    <input id="pass" type="text" name="passwd" class="text_field" placeholder="Enter your password...">
                                 </div>
 
                                 <div class="form-group">

@@ -1,4 +1,4 @@
-package com.portfolio.www.auth;
+package com.portfolio.www.auth.controller;
 
 import java.util.Calendar;
 import java.util.HashMap;
