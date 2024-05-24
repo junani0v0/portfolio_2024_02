@@ -57,5 +57,18 @@
 	<bean id="transactionManager"  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<!-- 이메일 전송하기 위한 bean설정 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.naver.com" />
+		<property name="port" value="587" />
+		<property name="username" value="${email.username}" />
+		<property name="password" value="${email.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>

@@ -10,17 +10,22 @@
     	<selectKey resultType="String" keyProperty="memberSeq" keyColumn="member_seq" order="AFTER" >
     	SELECT LAST_INSERT_ID()
     	</selectKey>
-    	
     	INSERT INTO forum.member
-    		(member_id, passwd, member_nm, email, auth_yn, join_dtm)
-    	VALUES(#{memberId}, #{passwd}, #{memberNm}, #{email}, 'N', DATE_FORMAT(NOW()  ,'%Y%m%d%H%i%s'))
+    		   (member_id, passwd, member_nm, email, auth_yn, join_dtm)
+    	VALUES (#{memberId}, #{passwd}, #{memberNm}, #{email}, 'N', DATE_FORMAT(NOW()  ,'%Y%m%d%H%i%s'))
     </insert>
     
-    <!-- 회원ID조회 -->
+    <!-- 회원ID 조회 -->
     <select id="getMemberId" parameterType="String" resultType="String">
+    	SELECT member_id 
+    	  FROM forum.member
+    	 WHERE member_id= #{memberId}
+    </select>
+    
+    <!-- 회원 번호 조회 -->
+    <select id="getMemberSeq" parameterType="String" resultType="int">
     	SELECT member_seq 
     	  FROM member 
     	 WHERE member_id= #{memberId}
     </select>
-    
 </mapper>

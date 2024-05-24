@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.portfolio.www.auth.mybatis.MemberAuthRepository">
+
+    <insert id="addAuthInfo" parameterType="MemberAuthDto">
+    	<selectKey resultType="String" keyProperty="memberSeq" keyColumn="member_seq" order="AFTER" >
+    	SELECT LAST_INSERT_ID()
+    	</selectKey>
+    	INSERT INTO forum.member_auth
+    		   (member_seq, auth_num, auth_uri, reg_dtm, expire_dtm, auth_yn)
+    	VALUES (#{memberSeq}, '', #{authUri}, DATE_FORMAT(NOW()  ,'%Y%m%d%H%i%s'), #{expireDtm}, 'N')
+    </insert>

@@ -9,5 +9,6 @@ public interface MemberRepository {
 	public int addJoin(HashMap<String, String> params);
 	//회원 ID 조회
 	public String getMemberId(String memberId);
-	
+	//회원 번호 조회
+	public int getMemberSeq(String memberId);
 }
